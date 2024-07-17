@@ -5,6 +5,7 @@ import http from "http";
 import cors from "cors";
 import cookieParser from "cookie-parser";
 import morgan from "morgan";
+import { authRoutes } from "./routes/authRoutes";
 
 const app = express();
 dotenv.config(); //to use env
@@ -28,3 +29,4 @@ app.use(cookieParser());
 server.listen(8080, () => {
   console.log("server connected");
 });
+app.use("/auth", authRoutes);
