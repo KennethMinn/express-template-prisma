@@ -7,8 +7,8 @@ import cookieParser from "cookie-parser";
 import morgan from "morgan";
 import { authRoutes } from "./routes/authRoutes";
 
-const app = express();
 dotenv.config(); //to use env
+const app = express();
 const server = http.createServer(app);
 
 app.use(
