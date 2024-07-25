@@ -56,7 +56,7 @@ export class AuthService {
       const accessToken = createToken(
         payload,
         process.env.ACCESS_TOKEN_SECRET!,
-        { expiresIn: "20s" }
+        { expiresIn: "15m" }
       );
 
       const refreshToken = createToken(
@@ -109,7 +109,7 @@ export class AuthService {
       const accessToken = createToken(
         payload,
         process.env.ACCESS_TOKEN_SECRET!,
-        { expiresIn: "20s" }
+        { expiresIn: "15m" }
       );
 
       return res.status(200).json({ accessToken });
@@ -136,3 +136,5 @@ export class AuthService {
     );
   }
 }
+
+export const authService = new AuthService();

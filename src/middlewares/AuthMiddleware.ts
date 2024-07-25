@@ -1,5 +1,5 @@
 import { verify } from "crypto";
-import { AuthService } from "../services/AuthService";
+import { authService, AuthService } from "../services/AuthService";
 import { NextFunction, Request, Response } from "express";
 
 export class AuthMiddleware {
@@ -9,3 +9,5 @@ export class AuthMiddleware {
     return this.authService.verifyToken(req, res, next);
   }
 }
+
+export const authMiddleware = new AuthMiddleware(authService);

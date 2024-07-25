@@ -1,22 +1,7 @@
 import { Router } from "express";
-import { AuthService } from "../services/AuthService";
-import { AuthController } from "../controllers/AuthController";
-import { AuthValidator } from "../validators/AuthValidator";
-import { ErrorService } from "../services/ErrorService";
-import { AuthMiddleware } from "../middlewares/AuthMiddleware";
-
-//services
-const authService = new AuthService();
-const errorService = new ErrorService();
-
-//controllers
-const authController = new AuthController(authService);
-
-//validators
-const authValidator = new AuthValidator(errorService);
-
-//middlewares
-const authMiddleware = new AuthMiddleware(authService);
+import { authController } from "../controllers/AuthController";
+import { authValidator } from "../validators/AuthValidator";
+import { authMiddleware } from "../middlewares/AuthMiddleware";
 
 const router = Router();
 

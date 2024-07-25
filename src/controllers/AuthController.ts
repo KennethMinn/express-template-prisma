@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { AuthService } from "../services/AuthService";
+import { authService, AuthService } from "../services/AuthService";
 
 export class AuthController {
   constructor(private authService: AuthService) {}
@@ -20,3 +20,5 @@ export class AuthController {
     return res.status(200).json({ message: "pass" });
   }
 }
+
+export const authController = new AuthController(authService);
